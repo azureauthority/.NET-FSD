@@ -1,0 +1,78 @@
+
+
+document.getElementById()
+document.getElementsByClassName()
+document.getElementsByTagName()
+document.querySelector()
+document.querySelectorAll()
+
+----------------------------------------------------------------------------
+
+let   arr  =  document.getElementsByClassName("c1");
+
+for(let  item of arr)
+{
+	
+	item.style.color = "red";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.....
+	stObj.name  = "Scott";
+	
+	studentsArray =  [..............];
+	
+	studentsArray[0].name =  "Scott";
+	
+	
+
+		let  domObj =  document.createElement("p");
+		
+		domObj.setAttribute("id", "p1");
+		....
+		
+		domObj.innerText  = "Hello World";
+		
+		document.body.appendChild(domObj);
+
+
+
+
+<ul>
+		<li  onclick="f1()">Text</li>
+		<li>Text</li>
+		<li>Text</li>
+		<li>Text</li>
+</ul>
+
+
+
+
+Event object
+~~~~~~~~~~~~
+--> Naming Convention: While you can name the parameter anything you like (e.g., e, evt, event, or even noodle), it's a common and recommended practice to use event or e for clarity and readability.
+-->  The Event object has numerous properties that provide details about the event.
+-->  target: The DOM element that triggered the event
+
+
+	function (event)
+	{		
+			event.target.tagName
+			event.target.id
+			event.target.innerText
+			event.target.value
+			event.target.style.color
+			.....
+	}
+
