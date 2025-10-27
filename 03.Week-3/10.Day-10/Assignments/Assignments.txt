@@ -1,0 +1,24 @@
+Assignments for Day-10
+~~~~~~~~~~~~~~~~~~~~~~
+Hint : Study the session examples before implement the assignments
+
+1. Update the ToDoList Example with the following requirement. 
+
+		a.   Add a hyperlink in LI for delete the task.
+		b.   Implement functionality to delete the current task that you have selected
+		
+2.   Create a web page to implement the following requirement:
+		a.  create table of rows with employee data
+		b.  create a button "Apply Styles" 
+		c.  Use DOM Accessing methods to access rows from the table 
+		d. Apply alternate rows with diff. background color on button click 
+		
+3.   Create a web page to add product details div at runtime. 
+
+		a.   Create a  section tag in html page to hold all produts
+		b.   Create button "Add Product"
+		c.    Each product should be placed in separate  Div tag 
+		d.   Inside the Div tag :     img tag, span for product name ,  p tag for description
+		e.   Use all dynamic options to create the required tags and add to section tag. 
+		
+		Optional :   Apply styles if required so that each product div should  display side by side. 
