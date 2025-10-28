@@ -1,0 +1,303 @@
+Day11( 28th Oct, 2025)
+~~~~~~~~~~~~~~~~~~~
+
+Developing web apps using React 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+Login Component :				UI +  App. Logic
+
+		
+			<Login />
+
+
+
+JSX :			JS code +  html tags 
+
+
+		let uname =  "Scott";
+
+		<h1>Welcome {uname}</h1>					---		<h1>Welcome Scott</h1>
+
+
+-----------------------------
+
+
+Environment Setup for React
+
+	1.  Node JS
+	2.  VS Code 
+	3.   Install  create-react-app 
+	
+	
+	
+			
+			
+1.  Create react project using create-react-app (CRA)
+
+>	node   -v
+
+>	npm  i  -g   create-react-app
+
+c:\ReactApps>create-react-app  my-app
+
+
+c:\ReactApps>cd my-app
+
+c:\ReactApps\my-app>npm start 
+
+	
+
+
+TypeScript Language:
+>	create-react-app  my-app   --template   typescript
+		
+------------------------------------------------------------------------------------------
+
+
+2.  Create react project Using Vite 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>  npm  create  vite@latest   my-app
+			a.  Choose Framework :    React
+			b.  Choose Language :      JavaScript
+			c. Use rolldown-vite (Experimental)?:  No
+			d.  Install with npm and start now?  :  Yes  
+		
+		
+ 
+-------------------------------------
+>   cd my-app
+>   npm run dev 
+
+
+
+
+
+
+
+
+
+
+index.js 			---->			main.jsx
+
+
+
+
+
+
+
+index.html :	
+						<div id="root"></div>
+
+app.jsx		----			<App />
+
+
+index.jsx/main.jsx 	----	
+	createRoot(document.getElementById('root')).render( 	<App />  );
+
+
+----------------------------------------------------------------
+
+Working with Components in React
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Functional  Components
+
+
+		function    App()
+		{
+			
+		}
+			
+	
+a.  Component Name should be starts with capital letter -  pascal casing 
+b.  Component functions should return  JSX element  (UI). 	
+c.   Component should be export 
+
+		export default App;
+		
+d.   Component should return one parent element.		
+
+	Wrong:
+			   <h1>Hello, World!</h1>
+				<p>Welcome to my React application.</p>
+		
+Correct: 		
+	 <div>
+				<h1>Hello, World!</h1>
+				<p>Welcome to my React application.</p>
+    </div>
+	
+	
+Alternately:
+	<React.Fragment>
+				<h1>Hello, World!</h1>
+				<p>Welcome to my React application.</p>
+    </React.Fragment>
+	
+	<>
+        <h1>Hello, World!</h1>
+        <p>Welcome to my React application.</p>
+      </>
+	
+
+What is React.Fragment?
+
+-->  A common pattern in React is for a component to return multiple elements. 
+--> Fragments let you group a list of children without adding extra nodes to the DOM.	
+	
+	
+
+
+Eg:
+
+function App() {
+
+  return (
+    <>
+      <h1>Hello, World!</h1>
+      <p>Welcome to my React application.</p>
+    </>
+  );
+}
+
+export default App;
+---------------------------------------------------------------------------
+
+
+
+
+
+function App(){
+  let uname = "Narasimha";
+
+  return (
+    <>
+            <h3>Developing Web Apps using React</h3>
+            <hr/>
+
+            <p>Hi {uname}, Good Morning...!</p>           
+    </>    
+  );  
+}
+
+export default App;
+
+
+
+
+
+
+
+	
+
+
+
+Working with JSX in React
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+JSX Expression:	
+		User Name: {uname}
+
+
+
+Working with Arrays / Lists
+
+
+
+let ar = [1,2,3,4];
+
+let ar2 = ar.map(item => item * 2);
+
+
+
+	
+ skillsArray.map( (item) =>  <li>{item}</li> );  
+ 
+ 
+ JSX Expression
+ ~~~~~~~~~~~~~ 
+ 1.	  <h1>   {uname}   </h1>
+ 2.      <h1>  Welcome to   {uname}   </h1>
+ 3.      <span>  {10 +  20} </span> 
+ 4.     <h1>  {  n  % 2 == 0 ? ‘Even' : ‘Odd'} </h1>
+		  Valid User: {isValidUser ? "Yes" : "No"} 
+5.   	 {   /*   comment line    */  }
+
+6.    Function Calling :
+			<p>  { sum(10, 20) }  </p>
+	
+7.    Display images using js variable :   
+			<img  src={fileName}  />
+			<img  src={ "Images/" +  fileName}  />
+8.  Apply css class:  			
+			<p class="c1"> hello world  </p>  					 
+			<p className="c1"> hello world  </p>			 
+			
+9.  In-line style in jsx:    
+	<p style={   {prop:value,  prop:value, ..... }   }> Hello World </p>
+	<p style={   {color:"blue",  textAlign: "center" }   }> Hello World </p>
+	
+10.  Event Handling:
+		<button  onClick={getData}> Show Results </button>
+		
+	
+-------------------------------------------------
+
+
+Data Handling in React Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.  Scalar 
+2.  Array
+3.  Object 
+4.  Array of Objects 
+
+---------------------------------
+
+
+ Handling Array in JSX
+ ~~~~~~~~~~~~~~~~~~~~~
+    let skillsArray = ["HTML5", "CSS3", "JavaScript", "Angular", "React"];
+	
+    let resultArray = skillsArray.map(item => <li>{item}</li>);
+   .....
+		<ul>
+                {resultArray}
+		</ul>
+ 
+ 
+
+export default Skillset;
+
+
+
+  let empsArray = [ 
+        { empno : 10256, ename :  "Scott", job : "Manager" , salary : 56000, deptno : 10 }, 
+        { empno : 10257, ename :  "Smith", job : "Analyst" , salary : 45000, deptno : 20 },
+        { empno : 10258, ename :  "Allen", job : "Clerk" , salary : 35000, deptno : 30 },
+        { empno : 10259, ename :  "Tiger", job : "Salesman" , salary : 40000, deptno : 10 },
+        { empno : 10260, ename :  "David", job : "Manager" , salary : 60000, deptno : 20 }
+    ];
+	
+	
+	let resultArray = empsArray.map(  item =>  <tr>
+				<td>  {item.empno} </td>
+				<td>  {item.enmae} </td>
+				 .....		
+		</tr>  );
+	
+	
+ 
+
+
+
+
+ 
