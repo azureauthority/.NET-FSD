@@ -1,0 +1,12 @@
+
+Hint :  Please study the session examples before doing the assignments
+
+1.  Create a component to Create an array of Product details :   pid, pname, price and Display all the products details in table format.  Use state variable to hold the array.  use Effect to load initial data into the array.  (Consider hard-coded content)
+
+2.   Update the above example to implement "Add New Product" functionality  :  Prepare required UI and state variables.  Add new product to the array so that tabel will get updated. 
+
+3.   Add the below validations to the above example :
+					a.   product id :  required, should be between 1 to 9999
+					b.   product name :  required, more than 4 four chars
+					c.    price  :  required, greater than 0
+
