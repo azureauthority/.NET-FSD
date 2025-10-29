@@ -1,0 +1,40 @@
+Day12 :  React Hooks and Forms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+JavaScript
+			<button  onclick="f1()">Click Me</button>
+			
+React
+			<button  onClick={callback}>Click Me</button>
+			<button  onClick={f1}>Click Me</button>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+const  [count,  setCount]  =  useState(1);	 
+  
+
+function handleClick(){
+       setCount( count  + 1 );
+    }
+			
+			
+Reading textbox values using state concept:
+
+	<input type="text"  onChange={(event) => setUname(event.target.value)}  />
+
+
+
+
+
+			
+			
