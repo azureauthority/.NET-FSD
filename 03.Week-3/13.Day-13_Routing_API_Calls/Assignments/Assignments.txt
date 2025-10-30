@@ -1,0 +1,14 @@
+
+ 
+Hint :  Please study the session examples before doing the assignments
+
+
+1.   Re-create the entire Routing application from the scratch. DO NOT COPY PASTE. 
+
+2.  Add the following components the above application :
+
+				a.   Products List    (Present in Cards format)
+				b.   Product Details (Display the selected product details)				
+				
+3.  Create a separate component to display posts (posted by users) in div format.    Get the data from the below url:  
+		https://jsonplaceholder.typicode.com/posts
