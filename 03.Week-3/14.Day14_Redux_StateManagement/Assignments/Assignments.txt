@@ -1,0 +1,11 @@
+
+
+1.  Create React Application to implement banking application by involving following requirements:
+		a.   Use Redux to manage the global state as balance amount
+		b.   Include these actions :   Deposit, Withdraw
+		c.    Develop the reducer and store to target these requirements
+		d.    Component to perform these operations. 
+	
+2.   [  Assignment on API Calls  ]  Create a React component to perform CRUD operations on Products data (id, pname, price, qty).    Use JSON-server as back-end.  
+
+
