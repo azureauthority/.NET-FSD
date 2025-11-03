@@ -1,0 +1,38 @@
+
+Hint :  Please study the session examples before doing the assignments
+
+1. Create a C# application to implement the following case study:
+		
+			Title : User Access Control
+			Scenario: Determine user access level based on a score calculated from user level, admin status, and special permissions.
+									
+						a. Access score should be calculated based on the given criteria:
+									1. User Level Score : 1 to 25
+									2. For Admin : 50 points
+									3. Has Special Permission : 25 points
+									
+						b. Based on the access score we should display the Access control status						
+											a. Greater than or Equal 75 -- Full Access
+											b. Greater than or Equal 50 -- Admin Access
+											c. Greater than or Equal to 25 -- Standard Access
+											d. Less than 25 -- Restricted Access
+
+2.  Update the Loops example (i.e Eg5_Program_Loops.cs)  for the following requirement:
+
+		a.  Add menu driven model of options
+		c.  Display the options to end user to choose:
+				1.  Even Numbers
+				2.  Odd Numbers
+				3.  Five multiples
+				4.  Custom Numbers
+				5.  Exit 
+		b.  Use switch case to choose the options and while for iteration.
+		
+		
+3.   Study the following points:
+		a.  Diff. between   Parse() and TryParse()
+		b.  What is Object class in .net framework?
+		c.  What is boxing and unboxing ?
+		
+
+
