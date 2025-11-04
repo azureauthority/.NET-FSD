@@ -1,0 +1,33 @@
+
+1.   Create  a C# program to implement the following requirement :  
+				a.  Build an Email Sender simulator to explore default, and optional parameters in C#. 
+				b.  The method should allow flexible calling with or without specifying all arguments. 
+				c.  Parameters:  Sender, Recipient, Subject, Message, IsImportant
+				
+				Hint : Only one method to define the address the requirement
+				
+2.   Create  a C# program to implement the following requirement :   
+			a .  Design a Geometry Utility methods that calculates the area of different shapes using method overloading.
+			b.  Invoke the methods from the Main method
+			c.   Get the required inputs from the user. 
+			
+			Hint : Need to include the shapes :  Square, Rectangle and Circle.
+					   --  Use Math.PI to get PI value. 
+					   
+3.     Create a C# program to implement the following requirement:
+
+		a.   You have a Logger class that writes messages to the console.
+		b.  Create multiple overloaded methods for different use cases (basic message, with level, with timestamp).
+		c.   Level :   may be INFO, WARNING, ERROR 
+		
+		
+4.  Create a c# program to Read Array of numbers from the user and try to catch the possible exceptions using try..catch block. 
+
+5.  Update the above program by add user defined exception : NegativeNumberException. 
+
+
+
+
+		
+			
+
