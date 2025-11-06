@@ -1,0 +1,44 @@
+1. Write a C# program to process customer details:  
+		Class Name :	Customer
+		•	Class should allow the following parameters in constructor
+				Customer c1  = new Customer();
+				Customer c2  = new Customer(10256);
+				Customer c3  = new Customer(10256, “Scott”);
+				Customer c4  = new Customer(10256, “Scott”, “Hyd”);
+
+		•	Declare required number of variables in the class. 
+		•	Method :  ShowDetails() to display all the values in single Line.
+			Eg:	Customer Details  ::   Id : 10256, Name : Scott, City : Hyd
+------------------------------------------------------------------------------------------------------------------------
+2. Create a c# Program class to process product details:
+
+	a.  Details :	 product id, product name, unit price, quantity
+	b.  create required fields, properties
+	c.   perform read and write operations using properties	
+				-->  read data from user and assign to properties
+				-->  display the details using properties
+
+
+	Eg:    Product obj = new Product();	
+			 obj.ProductId  =  int.Parse(Console.ReadLine());			
+			Console.WriteLine("Product Id  : " + obj.ProductId);
+
+
+--------------------------------------------------------------------------
+
+3..  Write a c# program to implement the following requirements:
+		a.  Create an Employee Class 
+				Members:
+							1. Properties:    Id, Name, Job, Basic, HRA,DA,IT,PF, GrossSalary
+							2. Methods :     GetGrossSalary(), PrintDetails()
+								
+		-->   GrossSalary should calculate based on the following following requirements :
+						Gross Salary  =  Basic +  HRA (15%)  + DA (8%)  - IT(10%) - PF(5%)
+		
+		-->  Read input from user :   Id, Name, Job, Basic
+		--> Make sure that all options are working without fail. 
+		--> Add extra properties to store HRA, DA, IT, PF, GrossSalary etc....
+		
+ 
+	
+	
