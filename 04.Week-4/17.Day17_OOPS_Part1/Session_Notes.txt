@@ -1,0 +1,101 @@
+
+
+
+    class Person
+    {
+        // data or state or fields 
+        int age;
+        string name;
+
+        // functions or methods 
+        void ShowDetails()
+        {
+            Console.WriteLine($"[Person Details] Name : {name}, Age : {age}");
+        }
+    }
+	
+	
+	
+	// Object Creation
+	
+	ClassName  objName =  new ClassName();
+	ClassName  objName;
+	
+	
+	
+	
+	
+	  // getters and setters
+  public int GetAge()
+  {
+      return age;
+  }
+
+  public void SetAge(int age)
+  {
+      this.age = age;
+  }
+  
+  
+  
+  
+  
+  
+  private int  _age;
+  
+  public  int   Age 
+  {	  
+	  get{   return  _age;  }
+	  set {  _age = value;  }	  
+  }
+  
+  
+  
+  
+  
+  
+  Default Values that are assigned to properties/private variables :
+  
+	1.  int  / double ---   0
+	2.  string   ----    ""
+	3.  bool    ---      false   
+	
+	
+	
+	Person p1 = new Person();
+	Person p1 = new Person("Scott");
+	Person p1 = new Person("Scott",  25);
+	
+	
+	
+  public Person()
+  {
+      Age = 0;
+      Name = "";
+  }
+
+  public Person(int age)
+  {
+      Age = age;
+  }
+  
+  
+  
+  
+  
+  
+  Part-1  
+			Class, Objects, Members (data, methods),  Properties, Methods, Constructors 
+  
+  
+  
+  Employee :  	empno, ename, job, salary, deptno 
+    
+  
+  class Employee
+  {
+	  public int Empno {  get;  set;  }
+	  public string  Ename  {  get;  set;  }
+	  ....
+  }
+  
