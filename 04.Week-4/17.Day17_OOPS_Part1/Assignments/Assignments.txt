@@ -39,6 +39,12 @@
 		--> Make sure that all options are working without fail. 
 		--> Add extra properties to store HRA, DA, IT, PF, GrossSalary etc....
 		
- 
+-------------------------------------------------------------------
+
+4.   Study the following items:
+		  a. 	What is "Is " relationship in OOPS?  
+		  b.  What is "Has a" relationship in OPPS?
+		  c.   How to use "is"  and "as"  operator in C#?
 	
 	
+
