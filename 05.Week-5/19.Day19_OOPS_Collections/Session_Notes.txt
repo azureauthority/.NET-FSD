@@ -1,0 +1,130 @@
+Day19  (10th Nov, 2025)
+~~~~~~~~~~~~~~~~~~~~
+
+1.   Abstract Class, Interfaces, etc...  
+2.   Collections in C#
+
+
+
+base keyword:
+		1.   to send data from child class constructor to base class constructor
+						public  childclassname(message): base(message)			
+						
+		2.   to invoke base class members : method/property:
+							base.ShowDetails();
+					
+--------------------------------------------------------------------------------
+
+
+
+public					:		inside the class  and outside the class 
+private				:		inside the class
+protected			:		inside the class	and inside the it's child class only
+----------------------------------------------------------
+internal 				:		inside the assembly (project)
+protected internal  : inside the assembly and its child classes 
+
+
+Note:   We can declare the class with either internal (default) or public.
+
+
+
+
+All C# projects are compiled  as    *.exe / *.dll    (assembly)
+-------------------------------------------------------------------------------------
+
+
+
+
+Abstract Class
+~~~~~~~~~~~~~
+
+-->  Abstract class allows abstract methods
+		-->  abstract methods without definition. 
+		-->  concrete methods with definition.   (non-abstract)
+
+-->   We cannot create instances for abstract class. 
+-->    Should inherit into child classes. 
+
+-->  Child class should override all abstract methods. 
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+interface in C#
+~~~~~~~~~~~~
+
+-->   In C#, an interface defines a contract that classes can implement. It specifies a set of members (methods, properties, etc) that the implementing type(child) must provide.
+
+-->  Interfaces name starts with  "I"  :   IList, ICollection, IEnumerable,  IVehicle, etc... 
+
+--> One class can implement multiple interfaces. 
+		
+interface IVehicle
+{
+    void SpeedUp(int increment);
+    void CheckSpeed();
+    int Speed { get; set; } // Property
+}
+
+
+class Bicycle : IVehicle
+{
+    public int Speed { get; set; }
+
+    public void SpeedUp(int increment)
+    {
+        Speed += increment;
+    }
+
+    public void CheckSpeed()
+    {
+        Console.WriteLine($"Current speed: {Speed}");
+    }
+}
+
+
+
+
+
+
+
+
+Arrays  	---     List   (Add,Remove,... )
+ 
+
+
+IEnumerable  
+IList 
+
+
+
+
+
+
+Object  obj =  100;
+
+obj =  new Employee()
+
+obj = false;
+
+....
+
+
+Student s1  = new Employee();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
