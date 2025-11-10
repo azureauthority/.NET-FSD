@@ -121,10 +121,36 @@ Student s1  = new Employee();
 
 
 
+--------------
+
+
+ Object Initializer
+ ~~~~~~~~~~~~~~
+		
+		
+		
+		Employee obj = new Employee();
+		obj.Id = 4565;
+		obj.Name  = "Scott";
+		
+		Employee obj = new Employee() { Id = 4565, Name = "Scott" };
+
+		  Employee e1 = new Employee() { Id = 4565, Name = "Scott" };
+		  Employee e2 = new Employee() { Id = 5654, Name = "Smith" };
+
+		  employees.Add( e1 );
+		  employees.Add( e2 );
 
 
 
 
-
-
-
+Collection Initializer
+~~~~~~~~~~~~~~~~~
+  List<Employee> empList = new List<Employee>()
+  {
+       new Employee() { Id = 1, Name = "Alice", Job = "Manager", Salary = 75000, Deptno = 10 },
+       new Employee() { Id = 2, Name = "Bob", Job = "Developer", Salary = 65000, Deptno = 20 },
+       new Employee() { Id = 3, Name = "Charlie", Job = "Analyst", Salary = 60000, Deptno = 20 }
+   };
+   
+   
