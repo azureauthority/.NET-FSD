@@ -1,0 +1,44 @@
+Assignment-1 (  Abstract Class)   Shape Hierarchy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objective: Implement abstraction and polymorphism.
+
+Requirements:
+		Create an abstract class Shape with:
+						An abstract method double CalculateArea()
+						A non-abstract method void DisplayArea() that prints the area
+
+Create subclasses:
+		Circle (with radius)
+		Rectangle (with width and height)
+		Override CalculateArea() in each subclass.
+
+In Main(), create objects and call DisplayArea() for each.
+
+------------------------------------------------------------------------------------------------------------
+
+Assignment-2: Interfaces  (Payment System Interface)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Objective: Implement interfaces and multiple classes.
+
+Requirements:
+
+		1.  	Create an interface IPayment:
+							void Pay(double amount)
+
+		2.   Implement classes:
+					CreditCardPayment
+					UPIPayment
+					PaypalPayment
+
+			3.  Demonstrate usage in the Main() method.
+			
+			
+
+Hint :  Prepare the child classes with required properties based on the payment type class. 
+----------------------------------------------------------------------------------
+
+Assignment-3:    Study the following concepts, Prepare some examples to demonstrate these concepts:
+		a.  Static Class
+		b.  Partial Class
+		c.   Sealed Class 
