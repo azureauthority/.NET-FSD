@@ -1,0 +1,62 @@
+Day-20 (11th Nov, 2025)
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+	MVC   Design Pattern
+	
+		M :   Models
+		V :    View
+		C :    Controller 
+		
+		
+ASP.NET Core :
+		a.   MVC Application 
+		b.   Web API Application
+		
+------------------------------------------------------------------
+
+
+ASP.NET Core  Web API Application
+
+			---  [Controllers]
+			---  [Models]
+	
+	
+	
+
+Controllers in API
+~~~~~~~~~~~~~~~~~
+
+
+ [Route("api/[controller]")]
+ [ApiController]
+ public class EmployeesController : ControllerBase
+ {
+	 
+ }
+ 
+ 
+Url :    	
+				https://localhost:5000/api/Employees
+				https://localhost:5000/api/Products
+				https://localhost:5000/api/Claims
+				......
+				
+
+
+
+
+Namespace :   WebApplication1.Controllers
+Namespace :   WebApplication1.Models
+
+
+
+ return NotFound("Requested employee id does not exists");
+ 
+ // Anonymous Objects in C#
+  return NotFound(new { status = "Failed", message = "Requested employee id does not exists" });
+  
+  
+ 
+ 
+ 
