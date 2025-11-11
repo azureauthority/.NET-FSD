@@ -1,0 +1,7 @@
+
+
+1. Create ASP.NET Core Web API to perform CRUD operations on Products data.
+
+		Product class Properties:    id, name, price, qty 
+		
+
