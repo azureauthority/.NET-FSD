@@ -1,0 +1,15 @@
+
+
+
+1. Update the yesterday's assignment (Polices) to perform CRUD operations using Repository and Service Pattern. 
+		a.   Add Repository interface and class
+		b.  Add Service  interface  and class
+		c.   Inject the service in Controller
+		d.   Redesign the controller to perform CRUD using Service.
+		
+		
+
+2.  Check the details about middlewares in ASP.Net core Application:
+			a.  What are middlewares?
+			b.   Why do we need?  Advantages?
+			c .  How middlewares works  while processing the request?
