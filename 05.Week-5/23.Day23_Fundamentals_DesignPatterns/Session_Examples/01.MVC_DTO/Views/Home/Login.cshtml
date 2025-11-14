@@ -1,0 +1,23 @@
+﻿
+
+<fieldset>
+	<legend>Login Form</legend>
+
+	<form action="/Home/Login" method="post">
+
+		<label for="Email">E-mail:</label>
+		<input autofocus type="text" id="Email" name="Email" />
+		<br /> <br />
+
+		<label for="Password">Password:</label>
+		<input type="password" id="Password" name="Password" />
+		<br /> <br />
+
+		<input type="submit" value="Login" />
+		<input type="reset" value="Clear" />
+		`
+	</form>
+
+	<p>@ViewBag.Message</p>
+
+</fieldset>
