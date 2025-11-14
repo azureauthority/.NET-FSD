@@ -1,2 +1,2 @@
 
-# Today's Concepts :   MVC, DTO in ASP.NET Core Appliations 
+# Fundamentals of Design Patterns :  (Day-23)   MVC, DTO in ASP.NET Core Appliations 
