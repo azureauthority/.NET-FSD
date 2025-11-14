@@ -1,0 +1,73 @@
+
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+using CQRSDemoApplication.Data;
+ 
+
+namespace CQRSDemoApplication
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+
+            builder.Services.AddControllers();
+
+            // Configure/Register DbContext class for  Oracle EF Core
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
+;
+          
+            builder.Services.AddTransient<IProductDao, ProductDao>();
+
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+             
+            // Global exception handling middleware
+            app.UseExceptionHandler(errorApp =>
+            {
+                errorApp.Run(async context =>
+                {
+                    context.Response.StatusCode = 500;
+                    context.Response.ContentType = "application/json";
+
+                    var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
+                    if (contextFeature != null)
+                    {
+                        // Log the error (optional)
+                        Console.WriteLine($"Error: {contextFeature.Error}");
+
+                        await context.Response.WriteAsJsonAsync(new
+                        {
+                            StatusCode = context.Response.StatusCode,
+                            Message = "Internal Server Error. Please try again later.",
+                            Detail = contextFeature.Error.Message  // optional: hide this in production
+                        });
+                    }
+                });
+            });
+          
+
+            app.MapControllers();
+
+            app.Run();
+        }
+    }
+}
