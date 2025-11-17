@@ -1,0 +1,159 @@
+Day24 (17th Nov,  2025)
+~~~~~~~~~~~~~~~~~~~~~
+
+
+
+What is LINQ Programming ?
+How to use LINQ with Entity Framework?
+How to handle relationships in EF Core?
+How to handle multiple GET End-points / methods in API?
+
+
+What is LINQ Programming ?
+
+	--->   Apply all Collections   :  Array, ArrayList, List, DbSet,  etc....
+	--->   Integrated sql style of querying techniques in C#
+	
+			
+Syntax:			
+	var  result =   		 from   item  in    collection
+									 select item;
+									 
+									 
+Eg:    List<int> numbers =  new List<int>{  5,7,17,4,5,47,7,5,4,3,32,34,35,5,7,99  };
+			
+
+
+		var  q1 =   from  item    in   numbers
+						   select item;
+						   
+		var  q2 =   from  item    in   numbers
+							where item % 2 == 0 
+						   select item;				   
+						   
+	var  q3 =   from  item    in   numbers
+							where item % 2 == 1    && item >   50
+						   select item;				
+
+	var  q4 =   from  item    in   numbers
+							where item % 2 == 0 
+							orderby item descending
+						   select item;	
+						   
+--------------------------------------------------------------------------
+
+	var  q5   =     from   item  in  empList
+						   where  item.deptno ==  10 
+						   orderby item.sal
+						   select item;
+						   
+		var  q5   =     from   item  in  empList
+						   where  item.deptno ==  10 
+						   orderby item.sal
+						   select new { ename, sal, deptno} ;
+						   
+						   
+	var  q5   =     from   item  in  _context.Employees.ToList()
+						   where  item.deptno ==  10 
+						   orderby item.sal
+						   select item;
+						   
+	
+	-------------------------------------------------------
+	
+	query.Count();
+	query.Min();
+	query.Max();
+	query.Sum();
+	
+	----------------------------------------------------
+	
+	Expression Methods 
+	~~~~~~~~~~~~~~~~~~	
+	empList.Where(item => item.Deptno ==  10);
+	empList.Find(1256)
+	empList.First(item => item.Deptno ==  10)
+	empList.FirstOrDefault(item => item.Deptno ==  10)
+	empList.OrderBy(item => item.Deptno)
+	empList.OrderByDescending(item => item.Deptno)
+	.....
+	----------------------------------------------------------
+
+	
+	
+	
+	
+	
+     _context.Depts.ToList();  	
+	 
+	 
+	_context.Depts.Include(item => item.Employees).ToList();  	
+	
+	
+	
+	public virtual  List<Employee>   Employees;    
+	
+	
+	
+
+[Route("/GetEmpsByDeptno")]
+[HttpGet("{id}")]
+public   IActionResult    GetEmpsByDeptno(int   id)
+{
+	
+	
+}
+
+
+
+
+
+  [HttpGet("GetEmpsByDeptno/{deptno}")]
+  public ActionResult<IEnumerable<Employee>> GetEmpsByDeptno(int deptno)
+  {
+      var  q1 =  from item in empList
+                 where item.Deptno == deptno
+                 select item;
+     
+      return Ok(q1);
+  }
+  
+  
+  //   Create a end-point to filter the employees data based on  the salary between the given range 
+  
+  
+[HttpGet("GetEmpsBySalary/{min}/{max}")]
+public ActionResult<IEnumerable<Employee>> GetEmpsBySalary(int min, int max)
+{
+  var q1 = from item in empList
+		   where item.Salary >= min && item.Salary <= max
+		   select item;
+
+  return Ok(q1);
+}
+  
+  
+  ---------------------------------------------------------------
+  
+  
+ Handling navigation properties
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+   public   .......    Create(ProductCreateDto   dtoOBj)
+  {
+	  
+		Product obj = new Product(){
+			Id  =  0,
+			Name = dtoOBj.Name,
+			Price = dtoOBj.Price,
+			Category = dtoOBj.Category,
+			Products = null
+		}
+		
+		
+		
+	  
+  }
+  
+  
