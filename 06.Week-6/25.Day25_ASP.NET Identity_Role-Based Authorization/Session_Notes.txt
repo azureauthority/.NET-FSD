@@ -1,1 +1,120 @@
    
+
+ Securing Endpoints Using JWT + Identity
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ 
+Hint :  Install the required packages using NPM
+
+		Microsoft.AspNetCore.Identity.EntityFrameworkCore    :   8.0.0
+		Microsoft.AspNetCore.Authentication.JwtBearer	:		8.0.0
+		System.IdentityModel.Tokens.Jwt			:			8.14.0
+
+
+
+Phase-1:    Steps to configure ASP.NET Core Identity provider: 
+
+1.   Add Model class to customize the User Information :	
+	
+			File : 		/Models/ApplicationUser.cs
+			
+			using Microsoft.AspNetCore.Identity;
+
+			 public class ApplicationUser : IdentityUser
+			 { 
+						public string? FullName { get; set; }
+			 }
+			 
+			 
+2.   Update ApplicationDbContext with   IdentityModel / ApplicationUser:
+
+		public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+		{
+			// code 			
+		}
+	
+	
+3.   Register  ApplicationDbContext   in Program.cs  
+
+	
+		// Add DbContext - Oracle provider
+		builder.Services.AddDbContext<ApplicationDbContext>(options =>
+		{
+			// Use Oracle provider - requires Oracle.EntityFrameworkCore
+			options.UseOracle(configuration.GetConnectionString("DefaultConnection"));
+		});
+
+
+			// Identity
+		builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+		{
+			options.Password.RequireDigit = true;
+			options.Password.RequireLowercase = true;
+			options.Password.RequiredLength = 8;
+		})
+		.AddEntityFrameworkStores<ApplicationDbContext>()
+		.AddDefaultTokenProviders();
+
+
+
+
+
+4.   Define required DTOs:   RegisterDto,  LoginDto
+
+
+5.  Define  EndPoinsts for   AuthController :   Register and Login 
+
+6.   Add some roles as database seed in Program.cs  
+
+
+  7.   Update the database  using package manager console commands:
+	
+  
+  
+	Add-Migration  IdentityUserUpdates
+	Update-Database 
+	
+----------------------------------------------------------------------------
+
+
+
+Phase-2:			Steps to generate JWT token
+~~~~~~~
+
+
+1.  Configure the details in  appsettings.json 
+2.    Define the JwtTokenService  Class. 			[Services/JwtTokenService.cs]
+3.  Register the service and add middlewares  in  Program.cs 
+
+		
+		//  JWT Registration 
+		builder.Services.AddAuthentication(.....).AddJwtBearer(.....);
+		
+		// DI 
+		builder.Services.AddScoped<JwtTokenService>();
+
+		// middlewares 
+		app.UseAuthentication();
+		app.UseAuthorization();
+
+
+4.   Update the Login End-Point  to generte theṭōkne.				/auth/Login
+
+
+	  var token = _jwtService.CreateToken(user, roles);
+		
+		
+		
+	5.  Apply [Authroize]  attribute to your actual controllers which are protected
+	
+			
+		
+		
+
+
+
+
+
+
+
+ 
