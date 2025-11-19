@@ -1,1 +1,10 @@
 
+
+
+
+Packages need to install to write unit testcase using xUnit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Microsoft.NET.Test.Sdk
+xunit
+xunit.runner.visualstudio
