@@ -1,0 +1,7 @@
+
+
+1  Study the xUnit and Moq example that we disucssed in the session.
+			a.  Console Application  ---   xunit test cases 
+			b.  Web API  		--- 			service and controller testing using moq 
+			
+2.  Create required Unit Test cases to the controllers and services methods. Implement this on your mini-project.
