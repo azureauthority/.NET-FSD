@@ -1,10 +1,66 @@
+Day26 (19th Nov, 2025)
+~~~~~~~~~~~~~~~~~~~~
 
-
+Module :		Unit Testing with xUnit & Moq 
 
 
 Packages need to install to write unit testcase using xUnit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.  Microsoft.NET.Test.Sdk
+2.  xunit
+3. xunit.runner.visualstudio
+4.  moq
 
-Microsoft.NET.Test.Sdk
-xunit
-xunit.runner.visualstudio
+-------------------------------------------------------------------------------------------
+
+
+Mocking dependencies 
+~~~~~~~~~~~~~~~~~~~~~
+
+
+Eg:		Writing unit testcases for service (ProductService),  we need mock the Repository 
+
+
+	public  class  ProductServiceTests
+	{ 	
+		   private readonly Mock<IProductRepository> _repoMock;
+		   private readonly ProductService _service;
+		   
+		   public  ProductServiceTests()
+		   {
+			      _repoMock = new Mock<IProductRepository>();
+			     _service = new ProductService(_repoMock.Object);			   
+		   }
+		   
+		   
+		     [Fact]
+			  public async Task GetProductsAsync_ShouldReturnAllProducts()
+			  {				  
+				   // Arrange 		   				         
+						var list = new List<Product>
+						{
+							new Product { Id = 1, Name = "Item1", Price = 10, Category = "CatA" },
+							new Product { Id = 2, Name = "Item2", Price = 20, Category = "CatB" }
+						};
+											   
+						_repoMock.Setup(r => r.GetAllAsync()).ReturnsAsync(list);
+					
+					
+						// Act					
+						var  result =   await _service.GetAllProductsAsync();
+						
+												 
+						// Assert
+						Assert.Equal(list.Count, result.ToList().Count);				  
+			  }
+		   
+	}
+
+
+
+
+
+
+
+
+
