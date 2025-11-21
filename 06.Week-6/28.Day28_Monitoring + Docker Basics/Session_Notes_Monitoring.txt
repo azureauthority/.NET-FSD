@@ -1,0 +1,78 @@
+Monitoring ASP.NET Core Web API using Prometheus & Grafana
+==============================================================
+
+
+
+Phase-1:	 Prometheus  Integration with ASP.NET Core Web API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+
+1.   Download  the Prometheus application.
+		https://prometheus.io/download/
+		
+		File  :   prometheus-3.7.3.windows-amd64.zip
+		
+2.   Install  the package   in ASP.NET Core Web API 
+
+			Package name :    prometheus-net.AspNetCore 
+			
+3.     Add the following middlewares Program.cs 
+
+		app.UseHttpMetrics();
+		app.MapMetrics();
+   
+
+4.    Run the API and Make some requests to EndPoints. 
+		http://loalhost:4654/api/Employees
+		http://loalhost:4654/api/Employees/1055
+		....
+
+5.    Check the metrics information :
+			
+				http://loalhost:4654/metrics 
+				
+6.      Update prometheus.yml   (Located where you download the zip file)
+
+
+		 static_configs:
+			  - targets: ["localhost:4654"]			# mentioned application port number 
+			  
+7.   Start prometheus  server.
+
+		
+		c:/prometheus>    prometheus.exe --config.file=prometheus.yml
+		
+8.   Browse the following Url to check the prometheus server UI:
+
+		http://localhost:9090
+		
+	=============================================================================
+			  
+
+
+Phase-2:	   Start the Grafana server to check the DashBoard and Graphs 
+
+
+
+1.   Download and Install Grafana  
+
+		https://grafana.com/grafana/download?platform=windows
+
+2.  Check the below Url to see the Grafana  UI:
+		
+			http://localhost:3000
+			
+			
+3.   If it is first time, login with given credentials:
+				user id :   admin
+				password :  admin
+				
+4.   Add Prometheus   as  a Data Source in Grafana
+
+5.   Create DashBoard  in Grafana 
+------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+ 
